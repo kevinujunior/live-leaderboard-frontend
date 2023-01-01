@@ -12,7 +12,7 @@ const Login = () => {
             emailId :email,
             password,
         }
-        axios.post("http://localhost:5000/api/user/login",user)
+        axios.post("https://kevinujunior-live-leaderboard-backend.azurewebsites.net/api/user/login",user)
         .then(res=>{
             document.cookie = "jwt=" + res.data.jwt + ";";
             document.cookie = "user=" + JSON.stringify(res.data.user) + ";";
