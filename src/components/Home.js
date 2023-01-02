@@ -7,6 +7,7 @@ import setAuthToken from '../utils/setAuthToken';
 import IO from "socket.io-client";
 import { getToken } from '../utils/auth';
 import getServerUrl from '../utils/serverURL';
+import './home.css'
 const socket = IO.connect(getServerUrl());
 
 const Home = () =>{
@@ -119,51 +120,42 @@ const Home = () =>{
 
 
     return (<div>
-    <nav class="navbar navbar-horizontal navbar-expand-lg navbar-light" style ={{border:"1px solid black",position:"fixed",top:0,
-    width:"100%",background:"teal", height:"auto",padding:"1%"}}>
-                <div class="container" style ={{display:"flex",justifyContent:"space-between"}}>
-                    
-                    <div style ={{background:"teal", border:"none"}}>
-                            
-                            <h5 style ={{color:"white"}}>Rank : {rank+1}</h5>
-                    
-                    </div>
-
-                    <div style={{display:"flex",justifyContent:"space-between"}}>
+    <div class="row" style ={{border:"1px solid black", background:"teal"}}>
+        <div class="col-md-4">
+            <h5 style ={{color:"white"}}>Rank : {rank+1}</h5>
+        </div>
+        <div class="col-md-4">
+            <div style={{display:"flex",justifyContent:"space-between"}}>
                         
-                        <i class="fa-solid fa-square-minus" style={{color:"white",fontSize:"40px", cursor:"pointer"}}
-                        onClick={withdrawFunc}></i>
-                        
-                        <span style ={{color:"white",fontSize:"1.2vw",marginLeft:"20px",marginRight:"20px",marginTop:"5px"}}>Score : {eth}</span>
-                        
-                        <i class="fa-solid fa-square-plus" style={{color:"white",fontSize:"40px",cursor:"pointer"}} 
-                        onClick={depositFunc}></i>
-                        
-                    </div>
-                    
-                    <div  id="navbar-info" style ={{display:"flex"}}>
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                <p class="nav-link" onClick={logoutFunc} style={{fontSize:"0.9vw",color:"midnightblue",cursor:"pointer",
-                                border:"0.1px solid black", borderRadius:"20px",backgroundColor:"powderblue"}}>
-                                    Logout
-                                </p>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#contact" style={{color:"white"}}>
-                                    {profile.name}
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="order-lg-4 ml-lg-3">
-                            <span class="avatar rounded-circle">
-                                <img alt="user profile" src="../../assets/img/person-auth.jpg" />
-                            </span>
-                        </div>
-                    </div>
-                   
-                </div>
-            </nav>
+                <i class="fa-solid fa-square-minus" style={{color:"white",fontSize:"40px", cursor:"pointer"}}
+                onClick={withdrawFunc}></i>
+                
+                <span class = "scoreclass" style ={{color:"white",fontSize:"1.2vw",marginLeft:"20px",marginRight:"20px",marginTop:"5px"}}>Score : {eth}</span>
+                
+                <i class="fa-solid fa-square-plus" style={{color:"white",fontSize:"40px",cursor:"pointer"}} 
+                onClick={depositFunc}></i>
+                
+            </div>
+        </div>
+        <div class="col-md-4" style={{display:"flex",justifyContent:"space-between"}}>
+                <ul style={{display:"flex",justifyContent:"space-between"}}>
+                    <li>
+                        <button onClick={logoutFunc}>
+                            Logout
+                        </button>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#contact" style={{color:"white"}}>
+                            {profile.name}
+                        </a>
+                    </li>
+                </ul>
+                <span class="avatar rounded-circle">
+                    <img alt="user profile" src="../../assets/img/person-auth.jpg" />
+                </span>
+                
+            </div>
+        </div>
             <section class="slice pt-md-4 pb-5 pb-0 ml-10 mr-10 mb-6" style={{ borderRadius:"1%", marginTop :"7%"}}>
                         <table class="table table-cards ">
                             <thead >
