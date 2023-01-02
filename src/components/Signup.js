@@ -16,7 +16,7 @@ const Signup = () => {
             password
         }
         console.log(newUser)
-        axios.post("https://kevinujunior-live-leaderboard-backend.azurewebsites.net/api/user/signup",newUser)
+        axios.post("http://localhost:5000/api/user/signup",newUser)
         .then(res=>{
             swal(res.data.Result)
             .then(value=>{

@@ -14,3 +14,5 @@ D:\GitHub\MERN\live-leaderboard\live-leaderboard-frontend>npm i axios
 
 
 D:\GitHub\MERN\live-leaderboard\live-leaderboard-frontend>npm install --save sweetalert
+
+D:\GitHub\MERN\live-leaderboard\live-leaderboard-frontend>npm i socket.io-client
