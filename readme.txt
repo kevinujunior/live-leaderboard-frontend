@@ -12,6 +12,7 @@ https://kevinujunior-live-leaderboard-backend.azurewebsites.net/
 4) go to http://localhost:3000/ in your browser and enjoy
 
 
+NOTE - While using the deployed link you can open severval tabs and make updates to see real time updates
 
 
 Sample User and Password
@@ -23,3 +24,5 @@ password - admin
 deployed link
 
 https://live-leaderboard-frontend.vercel.app/
+
+
