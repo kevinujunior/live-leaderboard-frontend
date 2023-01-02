@@ -16,7 +16,15 @@ const Home = () =>{
     const [rank,setRank] = useState(0);
     const navigate = useNavigate();
     
-    const updateScore = async (score) =>{
+    const depositUpdate = async (score) =>{
+        const scoreData = {
+            authToken: getToken(),
+            eth : score
+        }
+        await socket.emit('update_score_req',scoreData);
+    }
+
+    const withdrawUpdate = async (score) =>{
         const scoreData = {
             authToken: getToken(),
             eth : score
@@ -67,10 +75,10 @@ const Home = () =>{
         let amount = prompt("Please enter deposit amount");
         if (amount != null && amount !== "") {
             console.log(amount)
-            const obj = {
+            /*const obj = {
                 score:parseFloat(amount)
-            }
-            updateScore(amount)
+            }*/
+            depositUpdate(amount)
             /*axios.put("http://localhost:5000/api/eth/deposit",obj)
             .then(res=>{
                 swal(amount+" deposited")
@@ -83,15 +91,16 @@ const Home = () =>{
         let amount = prompt("Please enter deposit amount");
         if (amount != null && amount !== "") {
             console.log(amount)
-            const obj = {
+            /*const obj = {
                 score:parseFloat(amount)
-            }
-            axios.put("http://localhost:5000/api/eth/withdraw",obj)
+            }*/
+            withdrawUpdate(0-amount)
+            /*axios.put("http://localhost:5000/api/eth/withdraw",obj)
             .then(res=>{
                 swal(amount+" withdrawn")
             }).catch(err=>{
                 console.log(err)
-            })
+            })*/
         }
     }
 
