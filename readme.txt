@@ -1,18 +1,13 @@
+Steps to use this project:
 
-D:\GitHub\MERN\live-leaderboard>mkdir live-leaderboard-frontend
+1) Clone this repository
 
+2) while being in the project root directory use command >npm install
 
-D:\GitHub\MERN\live-leaderboard>cd ;live-leaderboard-frontend
-
-
-D:\GitHub\MERN\live-leaderboard\live-leaderboard-frontend>npx create-react-app ./
-
-
-D:\GitHub\MERN\live-leaderboard\live-leaderboard-frontend>npm i react-router-dom
-
-D:\GitHub\MERN\live-leaderboard\live-leaderboard-frontend>npm i axios
+3) Then >npm start
 
 
-D:\GitHub\MERN\live-leaderboard\live-leaderboard-frontend>npm install --save sweetalert
+Sample User and Password
 
-D:\GitHub\MERN\live-leaderboard\live-leaderboard-frontend>npm i socket.io-client
+email - dim@gmail.com
+password - admin
