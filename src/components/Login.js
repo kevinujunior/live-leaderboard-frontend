@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import {useNavigate} from 'react-router-dom';
+import getServerUrl from '../utils/serverURL';
 
 const Login = () => {
     const [email,setEmail] = useState("");
@@ -12,7 +13,7 @@ const Login = () => {
             emailId :email,
             password,
         }
-        axios.post("http://localhost:5000/api/user/login",user)
+        axios.post(`${getServerUrl()}/api/user/login`,user)
         .then(res=>{
             document.cookie = "jwt=" + res.data.jwt + ";";
             document.cookie = "user=" + JSON.stringify(res.data.user) + ";";

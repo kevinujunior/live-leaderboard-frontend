@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import {useNavigate} from 'react-router-dom';
+import getServerUrl from '../utils/serverURL';
+
 
 const Signup = () => {
     const [name, setName] = useState("");
@@ -16,7 +18,7 @@ const Signup = () => {
             password
         }
         console.log(newUser)
-        axios.post("http://localhost:5000/api/user/signup",newUser)
+        axios.post(`${getServerUrl()}/api/user/signup`,newUser)
         .then(res=>{
             swal(res.data.Result)
             .then(value=>{

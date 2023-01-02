@@ -6,7 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import setAuthToken from '../utils/setAuthToken';
 import IO from "socket.io-client";
 import { getToken } from '../utils/auth';
-const socket = IO.connect("http://localhost:5000");
+import getServerUrl from '../utils/serverURL';
+const socket = IO.connect(getServerUrl());
 
 const Home = () =>{
     
@@ -48,7 +49,7 @@ const Home = () =>{
         setAuthToken()
         //console.log(getLoggedInUser())
         
-        axios.get("http://localhost:5000/api/user/allusers")
+        axios.get(`${getServerUrl()}/api/user/allusers`)
         .then(res=>{
             setUsers(res.data.result)
             const currUser = getLoggedInUser()
