@@ -120,58 +120,53 @@ const Home = () =>{
 
 
     return (<div>
-    <div class="row" style ={{border:"1px solid black", background:"teal"}}>
-        <div class="col-md-4">
-            <h5 style ={{color:"white"}}>Rank : {rank+1}</h5>
-        </div>
-        <div class="col-md-4">
-            <div style={{display:"flex",justifyContent:"space-between"}}>
-                        
-                <i class="fa-solid fa-square-minus" style={{color:"white",fontSize:"40px", cursor:"pointer"}}
-                onClick={withdrawFunc}></i>
-                
-                <span class = "scoreclass" style ={{color:"white",fontSize:"1.2vw",marginLeft:"20px",marginRight:"20px",marginTop:"5px"}}>Score : {eth}</span>
-                
-                <i class="fa-solid fa-square-plus" style={{color:"white",fontSize:"40px",cursor:"pointer"}} 
-                onClick={depositFunc}></i>
-                
+        <div class="row" style ={{border:"1px solid black", background:"teal", 
+        position:"fixed",top:0, width:"100%",
+        padding:"20px 20px 0 20px"}}>
+            <div class="col-md-4" style={{marginBottom:"20px"}}>
+                <h5 style ={{color:"white"}}>Rank : {rank+1}</h5>
             </div>
-        </div>
-        <div class="col-md-4" style={{display:"flex",justifyContent:"space-between"}}>
-                <ul style={{display:"flex",justifyContent:"space-between"}}>
-                    <li>
-                        <button onClick={logoutFunc}>
-                            Logout
-                        </button>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="#contact" style={{color:"white"}}>
-                            {profile.name}
-                        </a>
-                    </li>
-                </ul>
-                <span class="avatar rounded-circle">
-                    <img alt="user profile" src="../../assets/img/person-auth.jpg" />
-                </span>
-                
+            <div class="col-md-4" style={{marginBottom:"20px"}}>
+                <div style={{display:"flex",justifyContent:"center"}}>
+                            
+                    <i class="fa-solid fa-square-minus" style={{color:"white",fontSize:"40px", cursor:"pointer"}}
+                    onClick={withdrawFunc}></i>
+                    
+                    <span class = "scoreclass" style ={{color:"white",fontSize:"1.2vw",marginLeft:"20px",marginRight:"20px",marginTop:"5px"}}>Score : {eth}</span>
+                    
+                    <i class="fa-solid fa-square-plus" style={{color:"white",fontSize:"40px",cursor:"pointer"}} 
+                    onClick={depositFunc}></i>
+                    
+                </div>
             </div>
-        </div>
-            <section class="slice pt-md-4 pb-5 pb-0 ml-10 mr-10 mb-6" style={{ borderRadius:"1%", marginTop :"7%"}}>
-                        <table class="table table-cards ">
-                            <thead >
-                                <tr>
-                                    <th style ={{fontSize:"20px"}} scope="col">Rank</th>
-                                    <th style ={{fontSize:"20px"}} scope="col">Username</th>
-                                    <th style ={{fontSize:"20px"}} scope="col">Name</th>
-                                    <th style ={{fontSize:"20px"}} scope="col">Ethereum</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {allUsers}
-                            </tbody>
-                        </table>
-                    </section>
-    </div>)
+            <div class="col-md-4" style={{display:"flex",justifyContent:"center", marginBottom:"20px"}}>
+                    <button class="btn-light logout-btn" style={{borderRadius:"15px"}} onClick={logoutFunc}>
+                        Logout
+                    </button>
+                    <a class="nav-link" href="#contact" style={{color:"white"}}>
+                        {profile.name}
+                    </a>
+                    <span class="avatar rounded-circle">
+                        <img alt="user profile" src="../../assets/img/person-auth.jpg" />
+                    </span>
+                </div>
+            </div>
+                <section class="slice pt-md-4 pb-5 pb-0 ml-10 mr-10 mb-6 tablesec" style={{ borderRadius:"1%", marginTop :"5%", position:"relative", zIndex:-1}}>
+                            <table class="table table-cards ">
+                                <thead >
+                                    <tr>
+                                        <th style ={{fontSize:"20px"}} scope="col">Rank</th>
+                                        <th style ={{fontSize:"20px"}} scope="col">Username</th>
+                                        <th style ={{fontSize:"20px"}} scope="col">Name</th>
+                                        <th style ={{fontSize:"20px"}} scope="col">Ethereum</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {allUsers}
+                                </tbody>
+                            </table>
+                 </section>
+        </div>)
 }
 
 
