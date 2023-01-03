@@ -1,4 +1,4 @@
-function getServerUrl(){
+function getServerUrl() {
     return "https://kevinujunior-live-leaderboard-backend.azurewebsites.net";
 }
 
